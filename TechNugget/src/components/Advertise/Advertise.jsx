@@ -1,48 +1,49 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "./Asvertise.css";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 export default function Advertise() {
   return (
-    <div className="carousel w-full h-[80vh]">
-      <div id="slide1" className="carousel-item relative w-full">
-        <img
-          src="https://d2oto3d7z6t29c.cloudfront.net/entries/transformed/22/62/702639_413b9fb091ec45c7bb5da43bbaaa666e.jpeg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          src="https://d2oto3d7z6t29c.cloudfront.net/entries/transformed/22/62/702639_413b9fb091ec45c7bb5da43bbaaa666e.jpeg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          src="https://d2oto3d7z6t29c.cloudfront.net/entries/transformed/22/62/702639_413b9fb091ec45c7bb5da43bbaaa666e.jpeg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
+    <div className="h-[70vh]">
+      <Swiper
+        spaceBetween={100}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img
+            className="rounded-xl"
+            src="https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2023/01/ultra.png?fit=1920%2C960&ssl=1"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-xl"
+            src="https://theaxo.com/wp-content/uploads/2023/02/Pre-order-Collection-Announcement_Visual-e1676529946699.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="rounded-xl"
+            src="https://www.androidheadlines.com/wp-content/uploads/2023/01/Samsung-Galaxy-S23-leaked-posters-11.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 }
