@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Google",
+    "image": "https://i.ytimg.com/vi/R7Kvb8FDjG4/maxresdefault.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Apple",
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch_GEO_EMEA?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009279096"
+  },
+  {
+    "id": 3,
+    "name": "Samsung",
+    "image": "https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-105011-dp-hero-sv-3687ade8-4b42-491a-a339-5e5a4a232bfd.jpg"
+  },
+  {
+    "id": 4,
+    "name": "OnePlus",
+    "image": "https://static1.anpoimages.com/wordpress/wp-content/uploads/2023/01/oneplus-11-and-oneplus-buds-pro-2-in-green.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Xiaomi",
+    "image": "https://fdn.gsmarena.com/imgroot/reviews/23/xiaomi-13-ultra/inline/-1200/gsmarena_001.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Vivo",
+    "image": "https://fdn.gsmarena.com/imgroot/news/23/08/vivo-v29-ifr/-1200w5/gsmarena_005.jpg"
+  }
+]

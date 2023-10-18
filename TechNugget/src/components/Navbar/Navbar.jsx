@@ -7,9 +7,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full ">
+    <div className="w-full fixed">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-20 px-5">
-        <div className="font-bold text-2xl md:text-4xl cursor-pointer ">
+        <div className="font-bold text-3xl md:text-4xl cursor-pointer ">
           <Link className="flex items-center gap-2">
             <GrTechnology />
             <span>TechNugget</span>
@@ -17,12 +17,12 @@ export default function Navbar() {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className="absolute right-5 top-5 cursor-pointer md:hidden w-7 h-7 text-2xl font-bold"
+          className="absolute right-5 top-[1.4rem] cursor-pointer md:hidden w-7 h-7 text-2xl font-bold"
         >
           {open ? <AiOutlineClose /> : <AiOutlineMenu />}
         </div>
         <ul
-          className={`md:flex md:items-center text-xl font-medium md:pb-0 pb-8 absolute md:static md:z-auto z-[1] top-[4rem] w-full md:w-auto transition-all duration-500 ease-in ${
+          className={`md:flex md:items-center text-xl font-medium md:pb-0 pb-6 absolute bg-white pl-5 md:pl-0 rounded-xl md:static md:z-auto z-[10] top-[4rem] w-full md:w-auto transition-all duration-500 ease-in ${
             open ? "left-[250px]" : "left-[500px]"
           }`}
         >
@@ -35,7 +35,7 @@ export default function Navbar() {
           <li className="text-[#212529] md:ml-8 mb-3 md:mb-0">
             <NavLink>My Cart</NavLink>
           </li>
-          <button className="btn bg-[#212529] text-white md:ml-8 font-semibold px-10 py-2 rounded duration-500 md:static">
+          <button className="bg-[#212529] text-white md:ml-8 font-semibold px-10 py-2 rounded-xl duration-500 md:static">
             Login
           </button>
         </ul>
