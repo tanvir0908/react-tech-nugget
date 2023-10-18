@@ -7,9 +7,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full fixed">
+    <div className="w-full py-5">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-20 px-5">
-        <div className="font-bold text-3xl md:text-4xl cursor-pointer ">
+        <div className="font-bold text-3xl md:text-5xl cursor-pointer ">
           <Link className="flex items-center gap-2">
             <GrTechnology />
             <span>TechNugget</span>
@@ -30,12 +30,12 @@ export default function Navbar() {
             <NavLink>Home</NavLink>
           </li>
           <li className="text-[#212529] md:ml-8 my-3 md:my-0">
-            <NavLink>Add Product</NavLink>
+            <NavLink to={"/addProduct"}>Add Product</NavLink>
           </li>
           <li className="text-[#212529] md:ml-8 mb-3 md:mb-0">
             <NavLink>My Cart</NavLink>
           </li>
-          <button className="bg-[#212529] text-white md:ml-8 font-semibold px-10 py-2 rounded-xl duration-500 md:static">
+          <button className="bg-[#212529] text-white md:ml-8 font-semibold px-10 py-3 rounded-xl duration-500 md:static">
             Login
           </button>
         </ul>

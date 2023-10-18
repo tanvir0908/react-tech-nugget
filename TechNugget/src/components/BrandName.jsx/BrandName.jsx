@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function BrandName() {
   const [brandNames, setBrandNames] = useState([]);
@@ -20,9 +21,11 @@ export default function BrandName() {
               src={names.image}
               alt=""
             />
-            <h2 className="text-3xl font-semibold text-center my-5">
-              {names.name}
-            </h2>
+            <Link to={`/products/${names.name.toLowerCase()}`}>
+              <h2 className="text-3xl font-semibold text-center my-5">
+                {names.name}
+              </h2>
+            </Link>
           </div>
         ))}
       </div>

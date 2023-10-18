@@ -4,6 +4,8 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/Root/Root";
 import Home from "./components/Home/Home";
+import AddProduct from "./components/AddProduct/AddProduct";
+import BrandProducts from "./components/BrandProducts/BrandProducts";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/addProduct",
+        element: <AddProduct />,
+      },
+      {
+        path: "/products/:id",
+        element: <BrandProducts />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
     ],
   },
