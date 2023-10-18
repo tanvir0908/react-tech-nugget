@@ -1,6 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function UpdateProduct() {
+  const navigate = useNavigate();
+
   const product = useLoaderData();
   const handleUpdateProduct = (e) => {
     e.preventDefault();
@@ -27,7 +30,7 @@ export default function UpdateProduct() {
     };
     console.log(updateProduct);
 
-    fetch(`http://localhost:5000/productUpdate/${product._id}`, {
+    fetch(`http://localhost:5000/productUpdate/${product._id.toLowerCase()}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -35,7 +38,12 @@ export default function UpdateProduct() {
       body: JSON.stringify(updateProduct),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire("Product Updated Successfully", "", "success");
+          navigate(`/products/${brandName}`);
+        }
+      });
   };
 
   return (

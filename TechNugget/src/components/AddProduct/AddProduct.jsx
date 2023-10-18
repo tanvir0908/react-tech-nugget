@@ -38,21 +38,7 @@ export default function AddProduct() {
       .then((data) => {
         if (data.insertedId) {
           // Sweet Alert
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener("mouseenter", Swal.stopTimer);
-              toast.addEventListener("mouseleave", Swal.resumeTimer);
-            },
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Product added successfully",
-          });
+          Swal.fire("New Product Added Successfully", "", "success");
 
           //   reset form data
           form.reset();
