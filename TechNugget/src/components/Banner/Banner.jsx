@@ -2,8 +2,8 @@
 
 export default function Banner() {
   return (
-    <div className="mt-20 flex py-20 px-10 justify-center items-center gap-5 mx-0 md:mx-20 bg-gray-100 rounded-xl">
-      <div className="flex-1 pl-20 text-gray-600">
+    <div className="mt-20 md:flex py-32 px-10 justify-center items-center gap-5 mx-0 md:mx-20 bg-gray-100 rounded-xl">
+      <div className="flex-1 md:pl-32 text-gray-600">
         <h2 className="text-4xl font-semibold leading-relaxed">
           We are <span className="font-bold text-black">Tech Experts</span>. We
           provide the complete{" "}
@@ -14,7 +14,7 @@ export default function Banner() {
       </div>
       <div className="flex-1 ">
         <svg
-          className=" mx-auto"
+          className="mx-auto w-full"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           width="452.5532"

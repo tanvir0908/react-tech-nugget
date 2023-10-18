@@ -39,7 +39,6 @@ export default function Navbar() {
             Login
           </button>
         </ul>
-        {/* button */}
       </div>
     </div>
   );
