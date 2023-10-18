@@ -22,8 +22,7 @@ export default function BrandProducts() {
   }
 
   return (
-    <div className={`mx-20`}>
-      <Advertise />
+    <div className={`mx-20 mb-20`}>
       <div className="my-20">
         <h2 className="text-6xl font-bold text-center mb-16">
           {products.length ? `${name}` : `${name}`}
@@ -61,7 +60,10 @@ export default function BrandProducts() {
                 >
                   Details
                 </Link>
-                <Link className="bg-[#212529] text-white ml-3 px-5 py-2 rounded-lg">
+                <Link
+                  to={`/productUpdate/${product._id}`}
+                  className="bg-[#212529] text-white ml-3 px-5 py-2 rounded-lg"
+                >
                   Update
                 </Link>
               </div>
@@ -69,6 +71,7 @@ export default function BrandProducts() {
           ))}
         </div>
       </div>
+      <Advertise />
     </div>
   );
 }
