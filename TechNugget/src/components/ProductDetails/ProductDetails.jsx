@@ -1,13 +1,57 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 export default function ProductDetails() {
+  const { user } = useContext(AuthContext);
+  // Load data from database
   const productDetails = useLoaderData();
+  // Page start at top
   useEffect(() => {
     window.scrollTo({
       top: 0,
     });
   }, []);
+
+  // Add to cart functionality
+  const handleCartData = () => {
+    const email = user.email;
+    const name = productDetails.name;
+    const brandName = productDetails.brandName;
+    const type = productDetails.type;
+    const price = productDetails.price;
+    const description = productDetails.description;
+    const rating = productDetails.rating;
+    const photo = productDetails.photo;
+
+    const newCart = {
+      email,
+      name,
+      brandName,
+      type,
+      price,
+      description,
+      rating,
+      photo,
+    };
+
+    // Send cart data into server
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCart),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          // Sweet Alert
+          Swal.fire("Product added to cart successfully", "", "success");
+        }
+      });
+  };
 
   const brandName = productDetails.brandName;
   let name1 = brandName[0];
@@ -45,7 +89,10 @@ export default function ProductDetails() {
           Rating:
           <span className="ml-1 text-gray-500"> {productDetails.rating}</span>
         </p>
-        <button className="bg-[#212529] text-white px-5 py-2 rounded-lg mt-3">
+        <button
+          onClick={handleCartData}
+          className="bg-[#212529] text-white px-5 py-2 rounded-lg mt-3"
+        >
           Add To Cart
         </button>
       </div>
