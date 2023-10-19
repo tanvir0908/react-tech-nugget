@@ -1,16 +1,19 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 
 export default function Register() {
+  // For start page from start
   useEffect(() => {
     window.scrollTo({
       top: 0,
     });
   }, []);
-
+  // Password validation error
+  const [error, setError] = useState(null);
+  // Import function from AuthProvider
   const { createUser } = useContext(AuthContext);
 
   const handleRegister = (e) => {
@@ -24,47 +27,43 @@ export default function Register() {
 
     console.log(name, photo, email, password);
 
-    // Create user
-    createUser(email, password)
-      .then((result) => {
-        console.log(result);
+    // Password validation
+    if (/^(?=.*[A-Z])(?=.*[\W_]).{6,}$/.test(password)) {
+      // Create user
+      createUser(email, password)
+        .then((result) => {
+          // Add username and picture to the firebase
+          updateProfile(result.user, {
+            displayName: name,
+            photoURL: photo,
+          });
 
-        updateProfile(result.user, {
-          displayName: name,
-          photoURL: photo,
-        });
-        // window.location.reload();
-        document.location.reload();
-        const user = { email, name, photo };
-        // Insert user data into DB
-        fetch("http://localhost:5000/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(user),
+          // Reload window
+          window.location.reload();
+
+          //Success message
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Register successfully",
+          });
         })
-          .then((res) => res.json())
-          .then((data) => console.log(data));
-
-        //Success message
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer);
-            toast.addEventListener("mouseleave", Swal.resumeTimer);
-          },
-        });
-        Toast.fire({
-          icon: "success",
-          title: "Register successfully",
-        });
-      })
-      .catch((error) => console.log(error));
+        .catch((error) => console.log(error));
+    } else {
+      setError(
+        "Password should be more than 6 characters with at least 1 capital letter and 1 special character"
+      );
+    }
   };
 
   return (
@@ -119,6 +118,9 @@ export default function Register() {
             required
           />
         </div>
+        <p className="text-center text-red-500 mt-5 text-lg font-medium">
+          {error}
+        </p>
         <div className="form-control mt-6 ">
           <button className="bg-[#212529] text-white text-lg font-semibold py-3 rounded-xl duration-500">
             Register
@@ -131,7 +133,6 @@ export default function Register() {
           Login
         </Link>
       </p>
-      <p className="text-center text-red-500 text-lg font-medium"></p>
     </div>
   );
 }
