@@ -12,7 +12,6 @@ export default function Navbar() {
       .then((result) => console.log(result))
       .catch((error) => console.log(error));
   };
-  console.log(user);
   return (
     <div className="w-full py-5">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-20 px-5">
@@ -34,13 +33,13 @@ export default function Navbar() {
           }`}
         >
           <li className="text-[#212529] md:ml-8 ">
-            <NavLink>Home</NavLink>
+            <NavLink to={"/"}>Home</NavLink>
           </li>
           <li className="text-[#212529] md:ml-8 my-3 md:my-0">
             <NavLink to={"/addProduct"}>Add Product</NavLink>
           </li>
           <li className="text-[#212529] md:mx-8 mb-3 md:mb-0">
-            <NavLink>My Cart</NavLink>
+            <NavLink to={`/cart/${user?.email}`}>My Cart</NavLink>
           </li>
           {/* {user && (
             <>
