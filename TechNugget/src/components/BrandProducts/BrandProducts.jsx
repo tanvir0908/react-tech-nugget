@@ -22,7 +22,7 @@ export default function BrandProducts() {
   }
 
   return (
-    <div className={`mx-20 mb-20`}>
+    <div className={`lg:mx-20 mb-20`}>
       <div className="my-20">
         <h2 className="text-6xl font-bold text-center mb-16">
           {products.length ? `${name}` : `${name}`}
@@ -31,7 +31,7 @@ export default function BrandProducts() {
           {products.map((product) => (
             <div
               key={product._id}
-              className="flex items-center mx-auto gap-8 hover:bg-gray-200 p-10 rounded-xl"
+              className="lg:flex items-center mx-auto gap-8 hover:bg-gray-200 p-10 rounded-xl"
             >
               <img className="rounded-xl" src={product.photo} alt="" />
               <div className="text-2xl font-bold">

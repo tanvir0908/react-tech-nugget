@@ -39,6 +39,9 @@ export default function ProductDetails() {
           Rating:
           <span className="ml-1 text-gray-500"> {productDetails.rating}</span>
         </p>
+        <button className="bg-[#212529] text-white px-5 py-2 rounded-lg mt-3">
+          Add To Cart
+        </button>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function Advertise() {
   return (
-    <div className="h-[70vh]">
+    <div className="h-[80vh] w-3/4 lg:w-full">
       <Swiper
         spaceBetween={100}
         centeredSlides={true}

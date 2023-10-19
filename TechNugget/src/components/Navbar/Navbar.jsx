@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { GrTechnology } from "react-icons/gr";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+  const { user, logoutUser } = useContext(AuthContext);
+  const handleLogout = () => {
+    logoutUser()
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
+  console.log(user);
   return (
     <div className="w-full py-5">
       <div className="md:flex items-center justify-between bg-white py-4 md:px-20 px-5">
@@ -32,12 +39,46 @@ export default function Navbar() {
           <li className="text-[#212529] md:ml-8 my-3 md:my-0">
             <NavLink to={"/addProduct"}>Add Product</NavLink>
           </li>
-          <li className="text-[#212529] md:ml-8 mb-3 md:mb-0">
+          <li className="text-[#212529] md:mx-8 mb-3 md:mb-0">
             <NavLink>My Cart</NavLink>
           </li>
-          <button className="bg-[#212529] text-white md:ml-8 font-semibold px-10 py-3 rounded-xl duration-500 md:static">
-            Login
-          </button>
+          {/* {user && (
+            <>
+              <li>
+                <img
+                  className="w-10 border mr-1 rounded-full"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </li>
+              <li>{user.displayName}</li>
+            </>
+          )} */}
+
+          {user != null ? (
+            <>
+              <li>
+                <img
+                  className="w-10 border mr-1 rounded-full"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </li>
+              <li>{user.displayName}</li>
+              <button
+                onClick={handleLogout}
+                className="bg-[#212529] text-white md:ml-8 font-semibold px-10 py-3 rounded-xl duration-500 md:static"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link to={"/login"}>
+              <button className="bg-[#212529] text-white md:ml-8 font-semibold px-10 py-3 rounded-xl duration-500 md:static">
+                Login
+              </button>
+            </Link>
+          )}
         </ul>
       </div>
     </div>
