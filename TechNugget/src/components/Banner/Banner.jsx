@@ -4,7 +4,7 @@ export default function Banner() {
   return (
     <div className="md:flex py-20 px-20 justify-center items-center gap-5 mx-0 md:mx-20 bg-gray-200 rounded-xl">
       <div className="flex-1 mx-auto text-gray-600">
-        <h2 className="text-4xl font-semibold leading-relaxed">
+        <h2 className="text-5xl w-11/12 font-semibold leading-relaxed">
           We are <span className="font-bold text-black">Tech Experts</span>. We
           provide the complete{" "}
           <span className="font-bold text-black">Tech Solutions</span> so that
