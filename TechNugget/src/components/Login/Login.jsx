@@ -1,6 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -10,8 +10,9 @@ export default function Login() {
       top: 0,
     });
   }, []);
-
+  const location = useLocation();
   const { loginUser, googleLogin } = useContext(AuthContext);
+  const [loginError, setLoginError] = useState(null);
 
   const navigate = useNavigate();
 
@@ -24,8 +25,10 @@ export default function Login() {
 
     loginUser(email, password)
       .then((result) => {
+        navigate(location?.state ? location.state : "/");
         console.log(result.user);
         setTimeout(() => {}, 200);
+
         //Success message
         const Toast = Swal.mixin({
           toast: true,
@@ -42,17 +45,20 @@ export default function Login() {
           icon: "success",
           title: "Login successfully",
         });
-
-        navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setLoginError("Invalid email and password");
+      });
   };
 
   const loginWithGoogle = () => {
     googleLogin()
       .then((result) => {
         console.log(result.user);
-        setTimeout(20000);
+        navigate(location?.state ? location.state : "/");
+        setTimeout(() => {}, 200);
+
         //Success message
         const Toast = Swal.mixin({
           toast: true,
@@ -69,8 +75,6 @@ export default function Login() {
           icon: "success",
           title: "Login successfully",
         });
-
-        navigate("/");
       })
       .catch((error) => console.log(error));
   };
@@ -105,6 +109,9 @@ export default function Login() {
             required
           />
         </div>
+        <p className="text-center text-red-500 text-lg font-medium mt-5">
+          {loginError}
+        </p>
         <div className="form-control mt-6 ">
           <button className="bg-[#212529] text-white text-lg font-semibold py-3 rounded-xl duration-500">
             Login
@@ -126,7 +133,6 @@ export default function Login() {
           Login with Google
         </button>
       </div>
-      <p className="text-center text-red-500 text-lg font-medium mt-5"></p>
     </div>
   );
 }

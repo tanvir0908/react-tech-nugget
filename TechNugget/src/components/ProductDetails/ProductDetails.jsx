@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 export default function ProductDetails() {
   const productDetails = useLoaderData();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
 
   const brandName = productDetails.brandName;
   let name1 = brandName[0];
