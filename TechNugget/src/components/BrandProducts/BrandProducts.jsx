@@ -24,7 +24,7 @@ export default function BrandProducts() {
   return (
     <div className={`lg:mx-20 mb-20`}>
       <div className="my-20">
-        <h2 className="text-6xl font-bold text-center mb-16">
+        <h2 className="text-6xl font-bold text-center mb-5 md:mb-16">
           {products.length ? `${name}` : `${name}`}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -33,7 +33,11 @@ export default function BrandProducts() {
               key={product._id}
               className="lg:flex items-center mx-auto gap-8 hover:bg-gray-200 p-10 rounded-xl"
             >
-              <img className="rounded-xl" src={product.photo} alt="" />
+              <img
+                className="rounded-xl mx-auto mb-5 md:mb-0"
+                src={product.photo}
+                alt=""
+              />
               <div className="text-2xl font-bold">
                 <p className="">
                   Product Name:{" "}
