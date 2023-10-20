@@ -17,7 +17,7 @@ export default function BrandName() {
         {brandNames.map((names) => (
           <div key={names.id} className="p-5 rounded-xl hover:bg-gray-100">
             <img
-              className="bg-white w-full rounded-xl h-[23.5rem]"
+              className="bg-white w-full rounded-xl h-[16rem] md:h-[23.5rem]"
               src={names.image}
               alt=""
             />

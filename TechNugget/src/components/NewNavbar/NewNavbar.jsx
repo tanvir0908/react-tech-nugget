@@ -80,7 +80,7 @@ export default function NewNavbar() {
             </p>
             <button
               onClick={handleLogout}
-              className="bg-[#212529] text-white md:ml-8 font-semibold px-10 py-3 rounded-xl duration-500 md:static"
+              className="bg-[#212529] text-white font-semibold md:ml-8 px-5 py-2 mr-4 md:mr-0 md:px-10 md:py-3 rounded-xl"
             >
               Logout
             </button>

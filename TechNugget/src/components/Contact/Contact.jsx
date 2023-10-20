@@ -1,19 +1,19 @@
 /* eslint-disable react/no-unknown-property */
 export default function Contact() {
-  const handleContect = (e) => {
+  const handleContact = (e) => {
     e.preventDefault();
   };
 
   return (
-    <div className="py-20 px-20  rounded-xl bg-gray-200 mb-20 mx-20">
+    <div className="py-20 md:px-20  rounded-xl bg-gray-200 mb-20 mx-5 md:mx-20">
       <h2 className="text-5xl font-bold text-center">Contact Us</h2>
       <p className="text-2xl mt-4 text-gray-500 font-semibold text-center">
         Have any queries? Feel free to ask.
       </p>
-      <div className="flex mt-10 items-center">
+      <div className="flex flex-col md:flex-row mt-10 items-center">
         <div className="flex-1">
-          <form className="mx-auto mt-10" onSubmit={handleContect}>
-            <div className="flex flex-col w-3/4 mx-auto">
+          <form className="mx-auto mt-10" onSubmit={handleContact}>
+            <div className="flex flex-col md:w-3/4 mx-auto">
               <span className="font-semibold text-lg mb-1">Name</span>
               <input
                 className="px-3 py-2 rounded text-xl"
@@ -22,10 +22,8 @@ export default function Contact() {
                 placeholder="Enter your name"
               />
             </div>
-            <div className="flex flex-col w-3/4 mx-auto my-3">
-              <span className="font-semibold text-lgfont-medium mb-1">
-                Email
-              </span>
+            <div className="flex flex-col md:w-3/4 mx-auto my-3">
+              <span className="font-semibold text-lg mb-1">Email</span>
               <input
                 className="px-3 py-2 rounded text-xl"
                 type="text"
@@ -33,7 +31,7 @@ export default function Contact() {
                 placeholder="Enter your email"
               />
             </div>
-            <div className="flex flex-col w-3/4 mx-auto">
+            <div className="flex flex-col md:w-3/4 mx-auto">
               <span className="font-semibold text-lg mb-1">Message</span>
               <textarea
                 className="px-3 py-2 rounded text-xl"
@@ -44,7 +42,7 @@ export default function Contact() {
                 placeholder="Enter your message"
               ></textarea>
             </div>
-            <div className="mx-auto w-3/4 mt-3">
+            <div className="mx-auto md:w-3/4 mt-3">
               <input
                 className="bg-[#212529] mt-2 cursor-pointer text-white text-lg w-full font-semibold py-3 rounded"
                 type="submit"
@@ -56,6 +54,7 @@ export default function Contact() {
 
         <div className="flex-1">
           <svg
+            className="w-full"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             data-name="Layer 1"

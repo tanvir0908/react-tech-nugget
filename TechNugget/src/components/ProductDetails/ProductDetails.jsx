@@ -60,9 +60,9 @@ export default function ProductDetails() {
   let name = name1 + name2;
 
   return (
-    <div className="mb-20 mx-20">
+    <div className="mb-20 pt-16 pb-10 rounded-xl  mx-20 bg-gray-200">
       <h2 className="text-5xl font-bold text-center mb-10">Product Details</h2>
-      <div className="bg-gray-200 p-10 text-2xl font-bold text-center rounded-xl">
+      <div className=" p-10 text-2xl font-bold text-center ">
         <img className="rounded-xl mx-auto" src={productDetails.photo} alt="" />
         <p className="mt-5">
           Product Name:

@@ -14,7 +14,7 @@ export default function Navbar() {
   };
   return (
     <div className="w-full py-5">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-20 px-5">
+      <div className="md:flex items-center justify-between bg-white py-4 md:px-20">
         <div className="font-bold text-3xl md:text-5xl cursor-pointer ">
           <Link className="flex items-center gap-2">
             <GrTechnology />
