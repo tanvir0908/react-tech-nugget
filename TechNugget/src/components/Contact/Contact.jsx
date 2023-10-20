@@ -2,6 +2,8 @@
 export default function Contact() {
   const handleContact = (e) => {
     e.preventDefault();
+    const form = e.target;
+    form.reset();
   };
 
   return (

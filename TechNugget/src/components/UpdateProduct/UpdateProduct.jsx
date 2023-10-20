@@ -31,7 +31,7 @@ export default function UpdateProduct() {
     console.log(updateProduct);
 
     fetch(
-      `https://b8a10-brandshop-server-side-tanvir0908.vercel.app/${product._id.toLowerCase()}`,
+      `https://b8a10-brandshop-server-side-tanvir0908.vercel.app/productUpdate/${product._id}`,
       {
         method: "PUT",
         headers: {
