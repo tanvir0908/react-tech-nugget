@@ -1,9 +1,13 @@
 /* eslint-disable react/no-unknown-property */
+
+import Swal from "sweetalert2";
+
 export default function Contact() {
   const handleContact = (e) => {
     e.preventDefault();
     const form = e.target;
     form.reset();
+    Swal.fire("Message send successfully", "", "success");
   };
 
   return (
