@@ -47,11 +47,13 @@ export default function UpdateProduct() {
   };
 
   return (
-    <div className="py-32  rounded-xl bg-gray-200 mb-10 mx-20">
-      <h2 className="text-5xl font-bold text-center">Update Product</h2>
+    <div className="py-32 px-5 md:px-0  rounded-xl bg-gray-200 mb-10 mx-5 md:mx-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-center">
+        Update Product
+      </h2>
       <form className="mx-auto mt-10" onSubmit={handleUpdateProduct}>
-        <div className="flex gap-10 w-2/3 mx-auto">
-          <div className="flex flex-col w-full">
+        <div className="md:flex gap-10 md:w-2/3 mx-auto">
+          <div className="flex flex-col mb-5 md:mb-0 w-full">
             <span className="font-medium mb-1">Name</span>
             <input
               className="px-3 py-2 rounded text-xl"
@@ -72,8 +74,8 @@ export default function UpdateProduct() {
             />
           </div>
         </div>
-        <div className="flex gap-10 my-5 w-2/3 mx-auto">
-          <div className="flex flex-col w-full">
+        <div className="md:flex gap-10 my-5 md:w-2/3 mx-auto">
+          <div className="flex flex-col w-full mb-5 md:mb-0">
             <span className="font-medium mb-1">Product Type</span>
             <input
               className="px-3 py-2 rounded text-xl"
@@ -94,8 +96,8 @@ export default function UpdateProduct() {
             />
           </div>
         </div>
-        <div className="flex gap-10 w-2/3 mx-auto">
-          <div className="flex flex-col w-full">
+        <div className="md:flex gap-10 md:w-2/3 mx-auto">
+          <div className="flex flex-col w-full mb-5 md:mb-0">
             <span className="font-medium mb-1">Description</span>
             <input
               className="px-3 py-2 rounded text-xl"
@@ -118,7 +120,7 @@ export default function UpdateProduct() {
             />
           </div>
         </div>
-        <div className="flex-col flex mx-auto w-2/3 my-5">
+        <div className="flex-col flex mx-auto md:w-2/3 my-5">
           <span className="font-medium mb-1">Product Photo</span>
           <input
             className="px-3 py-2 rounded text-xl"
@@ -128,7 +130,7 @@ export default function UpdateProduct() {
             defaultValue={product.photo}
           />
         </div>
-        <div className="mx-auto w-2/3">
+        <div className="mx-auto md:w-2/3">
           <input
             className="bg-[#212529] mt-2 cursor-pointer text-white text-lg w-full font-semibold py-3 rounded"
             type="submit"
