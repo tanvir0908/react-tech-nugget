@@ -80,7 +80,7 @@ export default function Login() {
   };
 
   return (
-    <div className="py-20 mb-20 mx-20 rounded-xl bg-gray-200">
+    <div className="py-20 mb-20 mx-5 px-5 md:px-0 md:mx-20 rounded-xl bg-gray-200">
       <h2 className="text-5xl font-bold text-[#212529] text-center my-10">
         Please Login
       </h2>

@@ -52,7 +52,7 @@ export default function Register() {
   };
 
   return (
-    <div className="py-20 mb-20 mx-20 rounded-xl bg-gray-200">
+    <div className="py-20 mb-20 mx-5 md:mx-20 px-5 md:px-0 rounded-xl bg-gray-200">
       <h2 className="text-5xl font-bold text-[#212529] text-center my-10">
         Please Register
       </h2>
