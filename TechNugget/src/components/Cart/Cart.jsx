@@ -32,23 +32,12 @@ export default function Cart() {
         Swal.fire("Product is removed from your cart", "", "success");
       }
     });
-
-    // fetch(`http://localhost:5000/carts/${id}`, {
-    //   method: "DELETE",
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.deletedCount > 0) {
-    //       const remaining = currentCart.filter((product) => product._id != id);
-    //       setCurrentCart(remaining);
-    //     }
-    //   });
   };
 
   return (
-    <div className="mx-20 my-10">
+    <div className="md:mx-20 my-10">
       <h2 className="text-center text-5xl font-bold">Cart Details</h2>
-      <div className="grid grid-cols-1 mx-20 mt-10 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:mx-20 mt-10 md:grid-cols-2 gap-10">
         {currentCart.map((product) => (
           <div
             key={product._id}
