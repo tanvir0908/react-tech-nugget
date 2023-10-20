@@ -1,6 +1,6 @@
 export default function Partners() {
   return (
-    <div className="mx-20 my-20 py-10 bg-gray-200 rounded-xl ">
+    <div className="mx-20 my-20 pt-10 pb-12 bg-gray-200 rounded-xl ">
       <h2 className="text-5xl font-bold text-center">Our Partners</h2>
       <div className="flex gap-10 justify-evenly mt-10">
         <div className="">
