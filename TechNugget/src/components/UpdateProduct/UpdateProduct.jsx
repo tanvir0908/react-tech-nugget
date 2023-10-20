@@ -30,13 +30,16 @@ export default function UpdateProduct() {
     };
     console.log(updateProduct);
 
-    fetch(`http://localhost:5000/productUpdate/${product._id.toLowerCase()}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateProduct),
-    })
+    fetch(
+      `https://b8a10-brandshop-server-side-tanvir0908.vercel.app/${product._id.toLowerCase()}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

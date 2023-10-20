@@ -37,7 +37,7 @@ export default function ProductDetails() {
     };
 
     // Send cart data into server
-    fetch("http://localhost:5000/cart", {
+    fetch("https://b8a10-brandshop-server-side-tanvir0908.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -41,7 +41,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/carts/${params.id}`),
+          fetch(
+            `https://b8a10-brandshop-server-side-tanvir0908.vercel.app/carts/${params.id}`
+          ),
       },
       {
         path: "/addProduct",
@@ -55,7 +57,9 @@ const router = createBrowserRouter([
         path: "/products/:id",
         element: <BrandProducts />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://b8a10-brandshop-server-side-tanvir0908.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/productDetails/:id",
@@ -65,7 +69,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/productDetails/${params.id}`),
+          fetch(
+            `https://b8a10-brandshop-server-side-tanvir0908.vercel.app/productDetails/${params.id}`
+          ),
       },
       {
         path: "productUpdate/:id",
@@ -75,7 +81,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/productDetails/${params.id}`),
+          fetch(
+            `https://b8a10-brandshop-server-side-tanvir0908.vercel.app/productDetails/${params.id}`
+          ),
       },
     ],
   },
