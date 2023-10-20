@@ -23,7 +23,7 @@ export default function BrandProducts() {
 
   return (
     <div className={`lg:mx-20 mb-20`}>
-      <div className="my-20">
+      <div className="my-20 min-h-[30rem]">
         <h2 className="text-6xl font-bold text-center mb-5 md:mb-16">
           {products.length ? `${name}` : `${name}`}
         </h2>

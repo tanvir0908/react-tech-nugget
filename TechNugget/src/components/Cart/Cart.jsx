@@ -35,11 +35,10 @@ export default function Cart() {
   };
 
   return (
-    <div className="md:mx-20 my-10">
-      {currentCart.length
-        ? '<h2 className="text-center text-5xl font-bold">Cart Details</h2>'
-        : '<h2 className="text-center text-5xl font-bold">No Data Available</h2>'}
-
+    <div className="md:mx-20 my-10 min-h-[30rem]">
+      <h2 className="text-5xl font-bold flex justify-center items-center">
+        {currentCart.length ? "" : "No Data Found"}
+      </h2>
       <div className="grid grid-cols-1 md:mx-20 mt-10 md:grid-cols-2 gap-10">
         {currentCart.map((product) => (
           <div
