@@ -1,5 +1,7 @@
 ## Live Link: https://tech-nugget.web.app/
 
+## Server Repository: https://github.com/tanvir0908/react-tech-nugget-server
+
 ## Features
 - User can add any product, they can view them by brand name and they can edit them as well.
 - User can add their favorite products into cart and can view their cart details using Navbar.
