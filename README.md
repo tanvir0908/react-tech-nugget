@@ -1,6 +1,10 @@
-## Live Link: https://tech-nugget.web.app/
+## Project Name: TechNugget
 
-## Server Repository: https://github.com/tanvir0908/react-tech-nugget-server
+## Live Link: 
+- https://tech-nugget.web.app/
+
+## Server Link: 
+- https://github.com/tanvir0908/react-tech-nugget-server
 
 ## Features
 - User can add any product, they can view them by brand name and they can edit them as well.
